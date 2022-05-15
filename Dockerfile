@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 FROM ubuntu:20.04
-UN apt-get update && apt-get install -y python3 && apt-get install -y python3-pip && apt-get install -y python3-venv && apt-get install -y curl && rm -rf /var/lib/apt/lists/* && apt clean
+RUN apt-get update && apt-get install -y python3 && apt-get install -y python3-pip && apt-get install -y python3-venv && apt-get install -y curl && rm -rf /var/lib/apt/lists/* && apt clean
 RUN mkdir /home/app && cd /home/app
 RUN curl https://raw.githubusercontent.com/devopsPRO27/flask3/main/flask3.py --output /home/app/app.py
 RUN python3 -m venv venv
